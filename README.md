@@ -28,7 +28,7 @@ Kubernetes cluster, the GitOps way.
 ### Part 1 – Cluster as code
 - [x] Terraform creates a kind cluster (1 control-plane + 2 workers)
 - [x] Terraform installs Argo CD and Traefik with Helm
-- [x] `terraform apply` brings everything up; `terraform destroy` removes it
+- [x] `terraform apply` brings everything up; `terraform destroy` removes it (destroy not re-tested live – see "What's missing")
 
 ### Part 2 – GitOps deployment
 - [x] Manifests in `k8s/`: Deployment (2 replicas, probes, requests/limits), Service, Ingress
