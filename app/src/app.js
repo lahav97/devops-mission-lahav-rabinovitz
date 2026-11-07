@@ -2,7 +2,7 @@ const express = require('express');
 const os = require('os');
 
 // Change this to demo a rollout (Part 3)
-const MESSAGE = 'Hello from the DevOps exercise!';
+const MESSAGE = 'Hello from the DevOps exercise! (v2)';
 
 // Injected at build time / by Kubernetes; fallbacks for local runs
 const VERSION = process.env.APP_VERSION || 'dev';

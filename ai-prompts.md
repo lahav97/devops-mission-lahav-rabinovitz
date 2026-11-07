@@ -150,3 +150,24 @@ before the commit chack if the files is correct now:
 ## 36
 [Attached: ai-prompts.md]
 this is the ai-promtds file please add what needed:
+
+
+## 37
+everything is ok?
+[Pasted: commit/push output and gh run watch – CI/CD run succeeded, with Node.js 20 deprecation warnings]
+
+## 38
+can i see the argo web?
+i need the password
+
+## 39
+[Attached: excerpt from a previous AI message – git pull / cat / kubectl / curl commands]
+explain this what it is doing?
+and this is the output:
+[Pasted: kustomization.yaml updated by CI, Synced/Progressing, 2 new pods, Version: 925279d...]
+
+## 40
+wait, for now, write me a conclution of what we did so far and what we didnt do and can do until we finish this mission.
+
+## 41
+ok, lets go with the zero downtime
