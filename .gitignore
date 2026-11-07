@@ -1,0 +1,17 @@
+# --- Node ---
+node_modules/
+npm-debug.log*
+
+# --- Terraform ---
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+
+# --- Cluster access ---
+*kubeconfig*
+
+# --- OS / editor ---
+.DS_Store
+.vscode/
