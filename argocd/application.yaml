@@ -1,0 +1,27 @@
+# ---- Argo CD Application: syncs k8s/ from this repo (applied once) ----
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-app
+  namespace: argocd
+spec:
+  project: default
+
+  # ---- Source: this repo, main branch, k8s/ folder ----
+  source:
+    repoURL: https://github.com/lahav97/devops-mission-lahav-rabinovitz.git
+    targetRevision: main
+    path: k8s
+
+  # ---- Destination: the same cluster Argo CD runs in ----
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: devops-app
+
+  # ---- Sync: automatic, delete removed resources, revert manual changes ----
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

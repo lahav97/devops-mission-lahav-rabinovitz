@@ -1,0 +1,13 @@
+# ---- Internal load balancing across the app pods ----
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-app
+spec:
+  type: ClusterIP
+  selector:
+    app: devops-app
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

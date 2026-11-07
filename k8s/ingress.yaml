@@ -1,0 +1,17 @@
+# ---- External access through Traefik: http://localhost ----
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: devops-app
+spec:
+  ingressClassName: traefik
+  rules:
+    - http: # no host: matches any hostname
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: devops-app
+                port:
+                  name: http
