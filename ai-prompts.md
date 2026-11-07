@@ -117,3 +117,36 @@ i add the 5 file please write again the readme with the changes so i could past 
 ## 27
 [Pasted: git add error "pathspec 'argocd' did not match any files"]
 another thing - i didnt add anything to the ai-prompts.md it is empty.
+
+
+## 28
+[Attached: screenshot of the VS Code file explorer – application.yaml was inside k8s/]
+write for me the remove files from folders that are not correct please.
+
+## 29
+before the commit look at the status:
+[Pasted: git status – README.md and ai-prompts.md modified, argocd/ and k8s/ untracked]
+
+## 30
+[Pasted: kubectl apply -f argocd/application.yaml and verification – Synced/Progressing, 2 pods on different workers, curl loop alternating between both pods]
+
+## 31
+lets go as we did before in the home exercise.
+start please.
+
+## 32
+where to put the scripts/load...
+
+## 33
+[Pasted: git add error "pathspec '.github/workflows/ci-cd.yaml' did not match any files"]
+
+## 34
+[Pasted: find output – the workflow was at .github/ci-cd.yaml]
+
+## 35
+[Attached: screenshot of the VS Code file explorer]
+before the commit chack if the files is correct now:
+
+## 36
+[Attached: ai-prompts.md]
+this is the ai-promtds file please add what needed:
