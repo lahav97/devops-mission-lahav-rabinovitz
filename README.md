@@ -20,9 +20,9 @@ Kubernetes cluster, the GitOps way.
 ### Part 0 – Set up and plan
 - [x] Install tools, log in to GitHub, create the repo
 - [x] Write this plan
-- [ ] Express service: `GET /` returns HTML (message, version, pod name), `GET /healthz` returns 200
-- [ ] Small automated test for both endpoints
-- [ ] Dockerfile running as a non-root user; build and run locally
+- [x] Express service: `GET /` returns HTML (message, version, pod name), `GET /healthz` returns 200
+- [x] Small automated test for both endpoints
+- [x] Dockerfile running as a non-root user; build and run locally
 
 ### Part 1 – Cluster as code
 - [ ] Terraform creates a kind cluster (1 control-plane + 2 workers)
@@ -45,3 +45,39 @@ Kubernetes cluster, the GitOps way.
 - [ ] Notes on running this on EKS in production
 
 ## Repository layout
+
+~~~
+app/                 Node.js service, tests and Dockerfile
+terraform/           kind cluster, Argo CD and ingress controller
+k8s/                 Kubernetes manifests synced by Argo CD
+.github/workflows/   CI/CD pipeline
+ai-prompts.md        Prompts given to the AI assistant
+~~~
+
+## How to run
+
+### App locally
+~~~bash
+cd app && npm install && npm test && npm start
+~~~
+Open http://localhost:8080
+
+### App in Docker
+~~~bash
+docker build -t devops-exercise:local --build-arg APP_VERSION=local-test ./app
+docker run --rm -p 8080:8080 devops-exercise:local
+~~~
+
+## Summary
+
+### What I finished
+_TBD_
+
+### What's missing
+_TBD_
+
+### One decision I made and why
+_TBD_
+
+### One place where the AI was wrong and how I noticed
+_TBD_
