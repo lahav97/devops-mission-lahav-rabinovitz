@@ -11,6 +11,7 @@ crash.log
 
 # --- Cluster access ---
 *kubeconfig*
+terraform/*-config
 
 # --- OS / editor ---
 .DS_Store
