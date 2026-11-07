@@ -9,5 +9,5 @@ resources:
 # ---- Image tag (the only field CI will change in Part 3) ----
 images:
   - name: devops-exercise
-    newTag: 925279d674f11ae4f9a05921b2140406b891331d
+    newTag: e0ab483a7b6139fbf359322876c736cd07c88d68
     newName: ghcr.io/lahav97/devops-mission-lahav-rabinovitz
