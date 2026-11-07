@@ -11,7 +11,7 @@ Kubernetes cluster, the GitOps way.
 | Local cluster | kind | Multi-node clusters in Docker, fast to create and destroy |
 | Infrastructure as code | Terraform (kind + Helm providers) | One `apply` / `destroy` for the cluster and its add-ons |
 | GitOps | Argo CD | Syncs the manifests in this repo to the cluster |
-| Ingress | Ingress controller (chosen in Part 1) | Exposes the app to the browser on this laptop |
+| Ingress | Traefik | Maintained controller with the standard Ingress API (ingress-nginx was retired in March 2026) |
 | Service | Node.js + Express | Small, familiar, quick to containerize |
 | CI/CD | GitHub Actions + GitHub Container Registry (GHCR) | Builds and pushes images, then updates the image tag in git |
 
@@ -25,9 +25,9 @@ Kubernetes cluster, the GitOps way.
 - [x] Dockerfile running as a non-root user; build and run locally
 
 ### Part 1 – Cluster as code
-- [ ] Terraform creates a kind cluster (1 control-plane + 2 workers)
-- [ ] Terraform installs Argo CD and an ingress controller with Helm
-- [ ] `terraform apply` brings everything up; `terraform destroy` removes it
+- [x] Terraform creates a kind cluster (1 control-plane + 2 workers)
+- [x] Terraform installs Argo CD and Traefik with Helm
+- [x] `terraform apply` brings everything up; `terraform destroy` removes it
 
 ### Part 2 – GitOps deployment
 - [ ] Manifests in `k8s/`: Deployment (2 replicas, probes, requests/limits), Service, Ingress
@@ -48,7 +48,7 @@ Kubernetes cluster, the GitOps way.
 
 ~~~
 app/                 Node.js service, tests and Dockerfile
-terraform/           kind cluster, Argo CD and ingress controller
+terraform/           kind cluster, Argo CD and Traefik
 k8s/                 Kubernetes manifests synced by Argo CD
 .github/workflows/   CI/CD pipeline
 ai-prompts.md        Prompts given to the AI assistant
@@ -67,6 +67,16 @@ Open http://localhost:8080
 docker build -t devops-exercise:local --build-arg APP_VERSION=local-test ./app
 docker run --rm -p 8080:8080 devops-exercise:local
 ~~~
+
+### Cluster (Terraform)
+~~~bash
+cd terraform
+terraform init
+terraform apply      # kind cluster + Traefik + Argo CD
+terraform destroy    # removes everything
+~~~
+- Traffic path: Mac port 80 → kind control-plane node (`extraPortMappings`) → Traefik pod (`hostPort: 80`).
+- Argo CD UI: `kubectl -n argocd port-forward svc/argocd-server 8081:443`, then https://localhost:8081 (user `admin`, password command from `terraform output argocd_admin_password`).
 
 ## Summary
 
