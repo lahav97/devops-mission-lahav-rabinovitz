@@ -171,3 +171,40 @@ wait, for now, write me a conclution of what we did so far and what we didnt do 
 
 ## 41
 ok, lets go with the zero downtime
+
+## 42
+[Pasted: git push output; gh run watch found no in-progress run]
+
+## 43
+[Pasted: gh run list – the demo run had already succeeded in 59s]
+
+## 44
+[Pasted: load-check.sh output "Total: 856  Failed: 0" and kubectl/curl showing the v2 message on new pods]
+
+
+## 42
+[Pasted: git push output; gh run watch found no in-progress run]
+
+## 43
+[Pasted: gh run list – the demo run had already succeeded in 59s]
+
+## 44
+[Pasted: load-check.sh output "Total: 856  Failed: 0" and kubectl/curl showing the v2 message on new pods]
+
+## 45
+first update the readme pleaSE:
+[Pasted: my current README.md]
+
+## 46
+we have 10 minutes, can we do the first part of the bonus ?
+
+## 47
+before that do i need to commit something?
+
+## 48
+so fix the readme again because it is not the final
+
+## 49
+[Attached: my current README.md]
+wait, this is the readme :
+write the commit lines and than lets go to the bonuse.
