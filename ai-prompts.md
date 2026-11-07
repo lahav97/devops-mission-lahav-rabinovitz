@@ -208,3 +208,14 @@ so fix the readme again because it is not the final
 [Attached: my current README.md]
 wait, this is the readme :
 write the commit lines and than lets go to the bonuse.
+
+## 50
+[Pasted: git commit/push output for the final README]
+
+## 51
+i think i dont want to do this part.
+lets stick with what we build (just one bonus).
+tell me if i need to change something or to commit anything else please.
+
+## 52
+[Attached: my final README.md for review]
